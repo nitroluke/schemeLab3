@@ -11,16 +11,6 @@
      )
   )
 
-  
-
-;(define (member? e lst)
-;  (if (null? lst)
-;      #f (if (equal? e (car lst))   
-;            #t (member? e (cdr lst))
-;            )
-;      )
-;  )
-
 (define (set? lst)
   (if (null? lst)
       #t (if (member? (car lst)(cdr lst))
@@ -52,11 +42,4 @@
 
 (define (intersect lst1 lst2)
   (makeWell(intersectHack lst1 lst2 '() ))
-  )
-
-(define (append! lst atom)
-  (if(null? lst)
-     '(atom) (cons (lst atom))
-     )
-  
   )
