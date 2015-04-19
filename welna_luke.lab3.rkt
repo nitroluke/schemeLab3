@@ -39,7 +39,7 @@
   (newline)     ; it works with lists of the format '(1 2 3(2 3(4 5 6))) where the deepest part is at the end
   (if (null? lst)   ; checks if the list is null
       '()  (if (list? (car lst))  ; if it is, return '(), otherwise check if car lst is a lst
-               (flattenLst(car lst)) (cons (car lst) (flattenLst (cdr lst)))))) ; if it is recursively call with the cdr of the lst
+               (flattenLst (append (car lst)(cdr lst))) (cons (car lst) (flattenLst (cdr lst)))))) ; if it is recursively call with the car of the list appended with cdr of the lst
                                       ; if it isnt concat car of lst with the recursive call of the cdr of the lst
 
 
